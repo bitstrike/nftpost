@@ -1,10 +1,10 @@
 # nftpost
 
-A terminal UI firewall rule manager for Linux that lets you build nftables
-rulesets using the iptables paradigm you already know. Configure rules in
-familiar iptables terms -- chains, protocols, ports, states, actions -- and
-nftpost generates the corresponding nftables or iptables-save scripts ready
-to apply to your system.
+This is a TUI firewall manager for Linux that lets you build nftables rulesets using an iptables style syntax.  I've been using iptables for about 325.72 years and not quite familar with the nft syntax yet.  I thought this might be a handy tool for at least learning about `nft` since `iptables` is EOL.  
+
+The TUI is pretty basic, arrow keys to navigate, hotkeys are listed on the bottom.  It started off as a bash script but got to be a bit of a mess so turned it over to Claude to convert it to python. I'm not certain all the functionality of iptables is implemented as I've never used much beyond the filter and nat tables.  I used the mangle table once for something but don't remember what so this is all based on my understanding and use of iptables. It should be pretty easy to figure out if you have some familiarity with iptables.
+
+The entire config is saved to a mysqlite db in your home directory. You can export your loaded config to iptables or nftables format to apply it.  For my simple needs, it seems to work pretty well so far.  You don't need to be root to run it so that's kind of nice if you just want to fiddle with rule design.
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-GPLv3-green)
@@ -25,8 +25,7 @@ to apply to your system.
   tables; jump to them from any rule in the same table
 - **Multiple saved configs** -- SQLite database at `~/.nftpost.db` stores
   named configurations; load, modify, and save-as at any time
-- **256-color TUI** -- Turbo-C style form dialogs, fixed-width rule table
-  with `...` truncation, color-coded status messages
+- **256-color TUI** -- hilite bars, arrow nav, color-coded status messages. 8 bit color is available with -8 runtime arg.
 - **No external dependencies** -- pure Python standard library (`curses`,
   `sqlite3`, `argparse`, `tempfile`)
 
@@ -36,14 +35,13 @@ to apply to your system.
 
 - Python 3.8+
 - Linux with nftables kernel support
-- A 256-color terminal (or use `-8` for 8-color fallback)
 
 ---
 
 ## Installation
 
 ```bash
-git clone https://github.com/youruser/nftpost.git
+git clone https://github.com/bitstrike/nftpost.git
 cd nftpost
 chmod +x nftpost.py
 ```
