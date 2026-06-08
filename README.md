@@ -2,7 +2,11 @@
 
 This is a TUI firewall manager for Linux that lets you build nftables rulesets using an iptables style syntax.  I've been using iptables for about 325.72 years and not quite familar with the nft syntax yet.  I thought this might be a handy tool for at least learning about `nft` since `iptables` is EOL.  
 
+<<<<<<< HEAD
 The TUI is pretty basic, arrow keys to navigate, hotkeys are listed on the bottom.  It started off as a bash script but got to be a bit of a mess so turned it over to Claude to convert it to python, and further extend it. I'm not certain all the functionality of iptables is implemented as I've never used much beyond the filter and nat tables.  I used the mangle table once for something but don't remember what so this is all based on my understanding and use of iptables. It should be pretty easy to figure out if you have some familiarity with iptables.
+=======
+The TUI is pretty basic, arrow keys to navigate, hotkeys are listed on the bottom.  It started off as a bash script but got to be a bit of a mess so turned it over to Claude to convert it to python. I'm not certain all the functionality of iptables is implemented as I've never used much beyond the filter and nat tables.  I used the mangle table once for something but don't remember what so this is all based on my understanding and use of iptables. It should be pretty easy to figure out if you have some familiarity with iptables.
+>>>>>>> refs/remotes/origin/main
 
 The entire config is saved to a mysqlite db in your home directory. You can export your loaded config to iptables or nftables format to apply it.  For my simple needs, it seems to work pretty well so far.  You don't need to be root to run it so that's kind of nice if you just want to fiddle with rule design.
 
