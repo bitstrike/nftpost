@@ -6,6 +6,8 @@ The TUI is pretty basic, arrow keys to navigate, hotkeys are listed on the botto
 
 The entire config is saved to a mysqlite db in your home directory. You can export your loaded config to iptables or nftables format to apply it.  For my simple needs, it seems to work pretty well so far.  You don't need to be root to run it so that's kind of nice if you just want to fiddle with rule design.
 
+![nft](./images/nftpost.png)
+
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![License](https://img.shields.io/badge/license-GPLv3-green)
 ![Platform](https://img.shields.io/badge/platform-Linux-lightgrey)
